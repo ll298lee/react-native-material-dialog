@@ -70,7 +70,7 @@ export default class SinglePickerMaterialDialog extends Component {
     </TouchableOpacity>
   );
 
-  keyExtractor = (item) => item.value;
+  keyExtractor = (item) => item.value.toString();
   render() {
     return (
       <MaterialDialog
