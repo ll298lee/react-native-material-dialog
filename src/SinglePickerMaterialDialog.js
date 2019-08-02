@@ -91,7 +91,7 @@ export default class SinglePickerMaterialDialog extends Component {
         }}>
 		<FlatList
 			data={this.props.items}
-			keyExtractor={keyExtractor}
+			keyExtractor={this.keyExtractor}
 			extraData={this.state} // to re-render the FlatList
 			renderItem={this.renderItem} />
       </MaterialDialog>
