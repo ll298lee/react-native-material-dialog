@@ -56,7 +56,7 @@ export default class SinglePickerMaterialDialog extends Component {
   }
 
   renderItem = (row) => (
-    <TouchableOpacity key={row.item.value} onPress={() => this.onRowPress(row.item.value)}>
+    <TouchableOpacity onPress={() => this.onRowPress(row.item.value)}>
       <View style={styles.rowContainer}>
         <View style={styles.iconContainer}>
           <Icon
@@ -70,6 +70,7 @@ export default class SinglePickerMaterialDialog extends Component {
     </TouchableOpacity>
   );
 
+  keyExtractor = (item) => item.value;
   render() {
     return (
       <MaterialDialog
@@ -90,6 +91,7 @@ export default class SinglePickerMaterialDialog extends Component {
         }}>
 		<FlatList
 			data={this.props.items}
+			keyExtractor={keyExtractor}
 			extraData={this.state} // to re-render the FlatList
 			renderItem={this.renderItem} />
       </MaterialDialog>
